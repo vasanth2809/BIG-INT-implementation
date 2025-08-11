@@ -4,6 +4,22 @@ This project provides an implementation of a `BigInt` class in C++ for handling 
 
 ---
 
+## Project Structure
+bigint/
+├── include/
+│   └── BigInt.hpp       # Public header (class declaration)
+├── src/
+│   └── BigInt.cpp       # Implementation (method definitions)
+├── examples/
+│   └── main.cpp         # Example binary and usage
+├── tests/               # (optional) unit tests (e.g. GoogleTest)
+├── CMakeLists.txt       # (optional) CMake build file
+├── .gitignore
+├── README.md
+└── LICENSE
+
+---
+
 ## Features
 
 - **Constructors**:
@@ -29,4 +45,6 @@ This project provides an implementation of a `BigInt` class in C++ for handling 
 1. Open a terminal and navigate to the `src` directory:
    ```bash
    cd c:\Users\Admin\BIG-INT-implementation\src
+   g++ -I../include BigInt.cpp examples/main.cpp -o BigIntExample
+   ./BigIntExample.exe
    ```
