@@ -6,17 +6,17 @@ This project provides an implementation of a `BigInt` class in C++ for handling 
 
 ## Project Structure
 bigint/
-├── include/
-│   └── BigInt.hpp       # Public header (class declaration)
-├── src/
-│   └── BigInt.cpp       # Implementation (method definitions)
-├── examples/
-│   └── main.cpp         # Example binary and usage
-├── tests/               # (optional) unit tests (e.g. GoogleTest)
-├── CMakeLists.txt       # (optional) CMake build file
-├── .gitignore
-├── README.md
-└── LICENSE
+    include/
+        BigInt.hpp       # Public header (class declaration)
+    src/
+        BigInt.cpp       # Implementation (method definitions)
+    examples/
+        main.cpp         # Example binary and usage
+    tests/               # (optional) unit tests (e.g. GoogleTest)
+        CMakeLists.txt       # (optional) CMake build file
+        .gitignore
+    README.md
+    LICENSE
 
 ---
 
