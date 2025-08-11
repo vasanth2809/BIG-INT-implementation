@@ -1,8 +1,10 @@
-#include "BigInt.hpp"
+#include "../include/BigInt.hpp"
 #include <cmath>
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <cstring>
+using namespace std;
 
 // ---------------- Constructors ----------------
 BigInt::BigInt(unsigned long long n) {
@@ -22,8 +24,8 @@ BigInt::BigInt(std::string &s) {
 
 BigInt::BigInt(const char *s) {
     digits = "";
-    for (int i = strlen(s) - 1; i >= 0; i--) {
-        if (!isdigit(s[i])) throw("ERROR");
+    for (int i = std::strlen(s) - 1; i >= 0; i--) {
+        if (!std::isdigit(s[i])) throw("ERROR");
         digits.push_back(s[i]);
     }
 }
@@ -277,4 +279,29 @@ bool Null(const BigInt &a) {
 
 int Length(const BigInt &a) {
     return a.digits.size();
+}
+
+BigInt BigInt::Factorial(int n) {
+    BigInt result((unsigned long long)1); // Explicit cast
+    for (int i = 2; i <= n; i++) {
+        result = result * BigInt((unsigned long long)i); // Explicit cast
+    }
+    return result;
+}
+
+BigInt BigInt::NthFibonacci(int n) {
+    if (n == 0) return BigInt((unsigned long long)0); // Explicit cast
+    if (n == 1) return BigInt((unsigned long long)1); // Explicit cast
+    BigInt a((unsigned long long)0), b((unsigned long long)1), c; // Explicit cast
+    for (int i = 2; i <= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return c;
+}
+
+BigInt BigInt::NthCatalan(int n) {
+    BigInt result = Factorial(2 * n) / (Factorial(n + 1) * Factorial(n));
+    return result;
 }
